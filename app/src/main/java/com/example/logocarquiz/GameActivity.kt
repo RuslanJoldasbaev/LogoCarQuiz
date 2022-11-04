@@ -91,6 +91,7 @@ class GameActivity : AppCompatActivity() {
                 ContextCompat.getColor(this@GameActivity, R.color.transparent)
             )
 
+
             btnSubmit.text = getString(R.string.text_submit)
         }
     }
