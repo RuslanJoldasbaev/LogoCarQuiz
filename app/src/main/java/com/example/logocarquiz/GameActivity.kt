@@ -1,5 +1,6 @@
 package com.example.logocarquiz
 
+import android.annotation.SuppressLint
 import android.content.res.ColorStateList
 import android.graphics.drawable.BitmapDrawable
 import androidx.appcompat.app.AppCompatActivity
@@ -60,6 +61,7 @@ class GameActivity : AppCompatActivity() {
         }
     }
 
+    @SuppressLint("SetTextI18n")
     private fun setQuestion() {
         val currentQuestion = questions[currentQuestionId]
 
