@@ -68,8 +68,8 @@ class GameActivity : AppCompatActivity() {
 
         binding.apply {
             progressBar.progress = currentQuestionId + 1
-            progressBar.max = questions!!.size
-            tvProgress.text = "${currentQuestionId + 1}" + "/" + "${questions!!.size}"
+            progressBar.max = questions.size
+            tvProgress.text = "${currentQuestionId + 1}" + "/" + "${questions.size}"
             tvQuestion.setImageResource(currentQuestion.question)
             btnOptionOne.text = currentQuestion.answers[0]
             btnOptionTwo.text = currentQuestion.answers[1]
@@ -155,8 +155,8 @@ class GameActivity : AppCompatActivity() {
         }
         binding.apply {
 
-            val que = questions?.get(currentQuestionId)
-            if (que!!.correctAnswerId != selectedAnswerId) {
+            val que = questions[currentQuestionId]
+            if (que.correctAnswerId != selectedAnswerId) {
                 answerView(selectedAnswerId, R.color.color_error)
             }
             answerView(que.correctAnswerId, R.color.color_correct)
