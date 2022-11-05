@@ -67,9 +67,9 @@ class GameActivity : AppCompatActivity() {
 
 
         binding.apply {
-            progressBar.progress = currentQuestionId+1
+            progressBar.progress = currentQuestionId + 1
             progressBar.max = questions!!.size
-            tvProgress.text="${currentQuestionId+1}"+"/"+"${questions!!.size}"
+            tvProgress.text = "${currentQuestionId + 1}" + "/" + "${questions!!.size}"
             tvQuestion.setImageResource(currentQuestion.question)
             btnOptionOne.text = currentQuestion.answers[0]
             btnOptionTwo.text = currentQuestion.answers[1]
@@ -115,9 +115,9 @@ class GameActivity : AppCompatActivity() {
         )
     }
 
-    private fun answerView(answer:Int,drawable:Int) {
+    private fun answerView(answer: Int, drawable: Int) {
         binding.apply {
-            when(answer) {
+            when (answer) {
                 0 -> {
                     btnOptionOne.backgroundTintList = ColorStateList.valueOf(
                         ContextCompat.getColor(this@GameActivity, drawable)
@@ -156,16 +156,16 @@ class GameActivity : AppCompatActivity() {
         binding.apply {
 
             val que = questions?.get(currentQuestionId)
-            if(que!!.correctAnswerId != selectedAnswerId) {
+            if (que!!.correctAnswerId != selectedAnswerId) {
                 answerView(selectedAnswerId, R.color.color_error)
             }
-            answerView(que.correctAnswerId,R.color.color_correct)
+            answerView(que.correctAnswerId, R.color.color_correct)
             btnSubmit.text = getString(R.string.continue_text)
             btnOptionOne.isEnabled = false
             btnOptionTwo.isEnabled = false
             btnOptionThree.isEnabled = false
             btnOptionFour.isEnabled = false
-            selectedAnswerId =-1
+            selectedAnswerId = -1
         }
     }
 }
