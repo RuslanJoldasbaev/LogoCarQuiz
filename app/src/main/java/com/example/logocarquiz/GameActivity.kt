@@ -53,11 +53,7 @@ class GameActivity : AppCompatActivity() {
                     checkAnswer()
                 } else {
                     currentQuestionId++
-                    when {
-                        currentQuestionId <= questions!!.size -> {
-                            setQuestion()
-                        }
-                    }
+                    setQuestion()
                 }
             }
 
