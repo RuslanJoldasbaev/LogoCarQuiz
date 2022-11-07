@@ -17,8 +17,8 @@ class ResultActivity : AppCompatActivity() {
         val totalquestion = intent.getStringExtra("total size")
 
         binding.apply {
-            "Configurations $userName !!".also { congo.text = it }
-            "$score / $totalquestion".also { tvScore.text = it }
+            "$userName siz".also { congo.text = it }
+            "$score / $totalquestion \nsheshtin'iz".also { tvScore.text = it }
             btnExit.setOnClickListener {
                 finish()
             }

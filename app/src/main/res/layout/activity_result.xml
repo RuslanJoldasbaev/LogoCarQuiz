@@ -38,15 +38,6 @@
                     tools:ignore="SpUsage" />
 
                 <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/margin_16"
-                    android:gravity="center"
-                    android:text="Your score is"
-                    android:textSize="14dp"
-                    tools:ignore="SpUsage" />
-
-                <TextView
                     android:id="@+id/tv_score"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
