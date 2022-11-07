@@ -15,7 +15,7 @@ class StartActivity : AppCompatActivity() {
         binding = ActivityStartBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-        val sharedPreferences = getSharedPreferences("CapitalsSettings",Context.MODE_PRIVATE)
+        val sharedPreferences = getSharedPreferences("CapitalsSettings", Context.MODE_PRIVATE)
 
         binding.etName.addTextChangedListener {
             binding.tilName.isErrorEnabled = false
@@ -26,9 +26,9 @@ class StartActivity : AppCompatActivity() {
             if (name.isEmpty() || name.isBlank()) {
                 binding.tilName.error = getString(R.string.error_required)
             } else {
-                sharedPreferences.edit().putString("username",name).apply()
+                sharedPreferences.edit().putString("username", name).apply()
                 val intent = Intent(this, GameActivity::class.java)
-                intent.putExtra(Constants.name,name)
+                intent.putExtra(Constants.name, name)
                 startActivity(intent)
                 finish()
             }

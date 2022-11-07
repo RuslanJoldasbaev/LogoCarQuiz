@@ -18,7 +18,7 @@ class GameActivity : AppCompatActivity() {
     private val questions = Constants.provideQuestions()
     private var currentQuestionId = -1
     private var selectedAnswerId = -1
-    private var Name:String? =null
+    private var Name: String? = null
     private var score = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -59,9 +59,9 @@ class GameActivity : AppCompatActivity() {
                     }
                     getString(R.string.finish_text) -> {
                         val intent = Intent(this@GameActivity, ResultActivity::class.java)
-                        intent.putExtra(Constants.name,Name.toString())
-                        intent.putExtra(Constants.score,score.toString())
-                        intent.putExtra("total size",questions.size.toString())
+                        intent.putExtra(Constants.name, Name.toString())
+                        intent.putExtra(Constants.score, score.toString())
+                        intent.putExtra("total size", questions.size.toString())
                         startActivity(intent)
                         finish()
                     }
@@ -81,7 +81,7 @@ class GameActivity : AppCompatActivity() {
 
         binding.apply {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-                progressBar.setProgress(currentQuestionId+1,true)
+                progressBar.setProgress(currentQuestionId + 1, true)
             }
             tvCounter.text =
                 getString(R.string.question_counter, currentQuestionId + 1, questions.size)
@@ -181,7 +181,7 @@ class GameActivity : AppCompatActivity() {
                 score++
             }
             answerView(currentQuestion.correctAnswerId, R.color.color_correct)
-            if(currentQuestionId != questions.lastIndex) {
+            if (currentQuestionId != questions.lastIndex) {
                 btnSubmit.text = getString(R.string.continue_text)
             } else {
                 btnSubmit.text = getString(R.string.finish_text)
