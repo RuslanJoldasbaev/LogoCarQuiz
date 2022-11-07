@@ -5,6 +5,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.core.widget.addTextChangedListener
+import com.example.logocarquiz.data.Constants
 import com.example.logocarquiz.databinding.ActivityStartBinding
 
 class StartActivity : AppCompatActivity() {
@@ -16,10 +17,6 @@ class StartActivity : AppCompatActivity() {
         setContentView(binding.root)
         val sharedPreferences = getSharedPreferences("CapitalsSettings",Context.MODE_PRIVATE)
 
-        binding.btnStart.setOnClickListener {
-            val intent = Intent(this, GameActivity::class.java)
-            startActivity(intent)
-        }
         binding.etName.addTextChangedListener {
             binding.tilName.isErrorEnabled = false
         }
@@ -31,6 +28,7 @@ class StartActivity : AppCompatActivity() {
             } else {
                 sharedPreferences.edit().putString("username",name).apply()
                 val intent = Intent(this, GameActivity::class.java)
+                intent.putExtra(Constants.name,name)
                 startActivity(intent)
                 finish()
             }
