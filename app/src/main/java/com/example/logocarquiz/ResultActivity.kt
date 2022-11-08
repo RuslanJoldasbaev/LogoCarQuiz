@@ -24,7 +24,7 @@ class ResultActivity : AppCompatActivity() {
             "$userName siz".also { congo.text = it }
             "$score / $totalquestion \n sheshtin'iz".also { tvScore.text = it }
             btnNew.setOnClickListener {
-                val intent = Intent(this@ResultActivity, StartActivity::class.java)
+                val intent = Intent(this@ResultActivity, GameActivity::class.java)
                 startActivity(intent)
                 finish()
             }
