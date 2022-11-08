@@ -51,9 +51,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/margin_16"
                     android:gravity="center"
-                    android:text="4/5"
-                    android:textSize="18dp"
-                    android:textStyle="bold" />
+                    android:textSize="@dimen/text_size_18"
+                    android:textStyle="bold"
+                    tools:ignore="SpUsage" />
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btn_new"
