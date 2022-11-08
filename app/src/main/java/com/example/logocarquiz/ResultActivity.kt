@@ -18,7 +18,7 @@ class ResultActivity : AppCompatActivity() {
         val totalquestion = intent.getStringExtra("total size")
 
         binding.apply {
-            if(score == "10") {
+            if (score == "10") {
                 tvImage.setImageResource(R.drawable.cup)
             }
             "$userName siz".also { congo.text = it }
