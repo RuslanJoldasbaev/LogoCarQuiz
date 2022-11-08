@@ -1,5 +1,6 @@
 package com.example.logocarquiz
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.logocarquiz.data.Constants
@@ -18,7 +19,12 @@ class ResultActivity : AppCompatActivity() {
 
         binding.apply {
             "$userName siz".also { congo.text = it }
-            "$score / $totalquestion \nsheshtin'iz".also { tvScore.text = it }
+            "$score / $totalquestion \n sheshtin'iz".also { tvScore.text = it }
+            btnNew.setOnClickListener {
+                val intent = Intent(this@ResultActivity, StartActivity::class.java)
+                startActivity(intent)
+                finish()
+            }
             btnExit.setOnClickListener {
                 finish()
             }
