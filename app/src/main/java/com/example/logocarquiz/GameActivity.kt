@@ -15,10 +15,9 @@ import com.google.android.material.snackbar.Snackbar
 
 class GameActivity : AppCompatActivity() {
     private lateinit var binding: ActivityGameBinding
-    private val questions = Constants.provideQuestions()
+    private val questions = Constants.provideQuestions().shuffled()
     private var currentQuestionId = -1
     private var selectedAnswerId = -1
-    private var Name: String? = null
     private var score = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,7 +26,6 @@ class GameActivity : AppCompatActivity() {
         setContentView(binding.root)
         currentQuestionId = 0
 
-        Name = intent.getStringExtra(Constants.name)
 
         setQuestion()
 
@@ -59,9 +57,8 @@ class GameActivity : AppCompatActivity() {
                     }
                     getString(R.string.finish_text) -> {
                         val intent = Intent(this@GameActivity, ResultActivity::class.java)
-                        intent.putExtra(Constants.name, Name.toString())
-                        intent.putExtra(Constants.score, score.toString())
-                        intent.putExtra("total size", questions.size.toString())
+                        intent.putExtra("result", score)
+                        intent.putExtra("total size", questions.size)
                         startActivity(intent)
                         finish()
                     }
@@ -173,6 +170,7 @@ class GameActivity : AppCompatActivity() {
             ).show()
             return
         }
+
         binding.apply {
 
             if (currentQuestion.correctAnswerId != selectedAnswerId) {

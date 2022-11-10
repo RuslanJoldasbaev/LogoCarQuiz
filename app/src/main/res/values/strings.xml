@@ -11,4 +11,5 @@
     <string name="new_game">New Game</string>
     <string name="text_exit">Exit</string>
     <string name="finish_text">Finish</string>
+    <string name="result_text">%s siz</string>
 </resources>

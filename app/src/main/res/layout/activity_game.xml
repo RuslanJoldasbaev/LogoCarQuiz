@@ -55,7 +55,8 @@
         android:textSize="@dimen/text_size_16"
         app:cornerRadius="24dp"
         app:strokeColor="@color/white"
-        app:strokeWidth="3dp" />
+        app:strokeWidth="3dp"
+        tools:ignore="SpUsage" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_option_two"

@@ -4,8 +4,7 @@ import com.example.logocarquiz.R
 
 object Constants {
 
-    const val name: String = "name"
-    const val score: String = "score"
+    const val PREFS_NAME = "CapitalsSettings"
 
     fun provideQuestions(): List<Question> {
         val questions = mutableListOf<Question>()
